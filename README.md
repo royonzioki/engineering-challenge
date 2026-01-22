@@ -184,13 +184,6 @@ flowchart TD
         act[act.py]
     end
 
-    %% Services
-    subgraph services_folder[act_service/]
-        direction TB
-        act_services_init[__init__.py]
-        legislation_fetch_service[legislation_fetch_service.py]
-    end
-
     %% Exporter
     subgraph exporters_folder[act_storage/]
         direction TB
