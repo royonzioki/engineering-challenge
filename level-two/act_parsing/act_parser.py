@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from act_model.act import Act
+from act_crawler.acts_index_crawler import ActsIndexCrawler
 
 def clean_text(text: str) -> str:
     if not text:
@@ -35,9 +36,16 @@ class AKNActParser:
 
         chapter = get_dd("Citation")
 
-        # Extract year_enacted and last_revision from URL instead of relying on messy metadata
+        # Extract year_enacted, last_revision from URL instead of relying on messy metadata
         year_enacted = None
         last_revision = None
+
+
+        # PDF link, Language and legal area classification
+        language = get_dd("Language")
+        legal_area = get_dd("Court")  # placeholder
+        pdf_link = f"{url}/source"
+
         try:
             path = urlparse(url).path  # e.g., /akn/ke/act/2008/15/eng@2025-06-20
             parts = path.strip("/").split("/")
@@ -47,12 +55,6 @@ class AKNActParser:
         except Exception:
             pass
 
-        # PDF link
-        pdf_link_tag = dl.select_one("dd a[href$='.pdf']")
-        pdf_link = "https://new.kenyalaw.org" + pdf_link_tag["href"] if pdf_link_tag else ""
-
-        language = get_dd("Language")
-        legal_area = get_dd("Court")  # placeholder: could classify differently
 
         return Act(
             title=title,

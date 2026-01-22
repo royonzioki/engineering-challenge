@@ -35,6 +35,11 @@ class ActsIndexCrawler:
             # Extract year enacted and last revision from URL
             year_enacted = None
             last_revision = None
+
+            # Extract PDF link from the button (if available)
+            pdf_link = f"{act_url}/source"
+
+
             try:
                 path = urlparse(act_url).path  # e.g., /akn/ke/act/2008/15/eng@2025-06-20
                 parts = path.strip("/").split("/")
@@ -45,12 +50,14 @@ class ActsIndexCrawler:
             except Exception:
                 pass
 
+
             act = {
                 "title": link.get_text(strip=True),
                 "url": act_url,
                 "citation": citation_cell.get_text(strip=True) if citation_cell else None,
                 "year_enacted": year_enacted,
-                "last_revision": last_revision
+                "last_revision": last_revision,
+                "pdf_link": pdf_link
             }
 
             acts.append(act)

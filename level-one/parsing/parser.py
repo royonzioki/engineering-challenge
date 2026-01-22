@@ -27,12 +27,13 @@ class AKNJudgmentParser:
             cleaned = text.replace("\xa0", " ")  # \xa0 is a non-breaking space in Python
             cleaned = cleaned.replace("Â", "")  # remove stray Â if present
             cleaned = cleaned.strip()  # remove leading/trailing whitespace
+
             # Remove trailing "Copy" if present
             if cleaned.endswith("Copy"):
                 cleaned = cleaned[:-len("Copy")].strip()
             return cleaned
 
-        # Extract fields
+        # Extracting fields
         title = clean_text(get_dd_text("Citation"))  # Full case name with citation
         citation = clean_text(get_dd_text("Media Neutral Citation"))
         court = get_dd_text("Court")
