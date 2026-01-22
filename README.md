@@ -107,7 +107,7 @@ flowchart TD
 
     %% Data flow arrows
     main --> law_index
-    crawler --> parser
+    law_index --> parser
     parser --> judgement
     judgement --> fetch_service
     fetch_service --> csv_exporter
