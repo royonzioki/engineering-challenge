@@ -106,7 +106,7 @@ flowchart TD
     end
 
     %% Data flow arrows
-    main --> crawler
+    main --> law_index
     crawler --> parser
     parser --> judgement
     judgement --> fetch_service
@@ -125,9 +125,12 @@ flowchart TD
 
 1. Clone the repository:
     ```git clone git@github.com:royonzioki/engineering-challenge.git```
+
     ```cd engineering-challenge```
+
 2. Install Dependencies:
-    Install the dependencies and packages using ```pip install```
+    Install the dependencies and packages using
+     ```pip install```
 
 
 #### Usage 
