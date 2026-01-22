@@ -194,7 +194,7 @@ flowchart TD
     %% Data flow arrows
     main --> acts_index_crawler
     acts_index_crawler --> act_legal_classifier
-    act_legal_classifier --> act
+    act_legal_classifier --> act_parser
     act --> act_parser
     act_parser --> crawler
     crawler --> json_exporter
