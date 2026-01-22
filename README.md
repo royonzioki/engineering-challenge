@@ -65,6 +65,7 @@ The scraper follows a modular architecture whereby each component is isolated in
 
 Below is a mermaid diagram demonstrating the workflow:
 
+```mermaid
 flowchart TD
     %% Main entry point
     main[main.py]
