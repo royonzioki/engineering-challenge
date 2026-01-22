@@ -106,7 +106,7 @@ flowchart TD
     end
 
     %% Data flow arrows
-    main --> kenyalaw_crawler
+    main --> crawler
     crawler --> parser
     parser --> judgement
     judgement --> fetch_service
