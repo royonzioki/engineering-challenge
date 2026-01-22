@@ -80,7 +80,7 @@ flowchart TD
     parser --> fetch_service 
     judgement --> fetch_service
     fetch_service --> main
-    judgement--> csv_exporter
+    main --> csv_exporter
    ```
 
 ### Required Packages
