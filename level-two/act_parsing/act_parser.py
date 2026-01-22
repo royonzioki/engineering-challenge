@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from act_model.act import Act
 from act_crawler.acts_index_crawler import ActsIndexCrawler
+from act_parsing.act_legal_classifier import categorize_legal_area
 
 def clean_text(text: str) -> str:
     if not text:
@@ -43,7 +44,10 @@ class AKNActParser:
 
         # PDF link, Language and legal area classification
         language = get_dd("Language")
-        legal_area = get_dd("Court")  # placeholder
+        legal_area = categorize_legal_area(
+                    title=title,
+                    chapter=chapter
+                    )
         pdf_link = f"{url}/source"
 
         try:
