@@ -146,12 +146,12 @@ architectures.
 
 ### Architecture 
 Like in Level 1, each component is isolated in its own folder for scalability and maintenance, including:
-    - ```main2.py```: this is the primary orchestrator coordinating the entire level 2 pipeline. 
-    - ```acts_index_crawler/```: fetches raw HTML from [**legislation**](https://new.kenyalaw.org/legislation/) webpage. 
-    - ```act_parser/```: extracts structured data into objects. 
-    - ```act/```: stores case information in Python classes. 
-    - ```crawler/```: fetches metadata for each of the acts in their specific webpage. 
-    - ```json_exporter/```: outputs processed data into a JSON file.
+- ```main2.py```: this is the primary orchestrator coordinating the entire level 2 pipeline. 
+- ```acts_index_crawler/```: fetches raw HTML from [**legislation**](https://new.kenyalaw.org/legislation/) webpage. 
+- ```act_parser/```: extracts structured data into objects. 
+- ```act/```: stores case information in Python classes. 
+- ```crawler/```: fetches metadata for each of the acts in their specific webpage. 
+- ```json_exporter/```: outputs processed data into a JSON file.
 
 
 Below is a mermaid diagram demonstrating the level 2 workflow:
