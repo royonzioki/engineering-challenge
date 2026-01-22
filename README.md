@@ -24,36 +24,6 @@ The project structure is characterized by the following features:
 - Fetching Services: Handles transformations, filtering, and validation of scraped data.
 - CSV Exporter: Saves processed case data into CSV files for further analysis or reporting.
 
-### Project Structure 
-
-level-one/
-│
-├── main.py
-│
-├── crawler/
-│   ├── __init__.py
-│   └── law_index.py
-│
-├── parsing/
-│   ├── __init__.py
-│   └── parser.py
-│
-├── models/
-│   ├── __init__.py
-│   └── judgement.py
-│
-├── services/
-│   ├── __init__.py
-│   └── fetch_service.py
-│
-├── exporters/
-│   ├── __init__.py
-│   └── csv_exporter.py
-│
-├── requirements.txt
-└── README.md
-    
-
 ### Architecture
 The scraper follows a modular architecture whereby each component is isolated in its own folder for scalability and maintenance, including:
 - ```main.py```: this is the primary orchestrator of the workflow. 
