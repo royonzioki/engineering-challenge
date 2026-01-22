@@ -111,6 +111,7 @@ flowchart TD
     parser --> judgement
     judgement --> fetch_service
     fetch_service --> csv_exporter
+   ```
 
 ### Required Packages
 
