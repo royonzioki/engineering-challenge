@@ -12,13 +12,18 @@ civil_keywords = {
     "commercial", "insurance", "banking", "tax", "revenue",
     "employment", "labour", "labor", "tort", "architects",
     "auctioneers", "bank", "education", "surveyor", "governor",
-    "governance", "exchange", "broker", "authority"
+    "governance", "exchange", "broker", "brokers", "authority",
+    "markets","economy", "arbitration", "institution", "institutional",
+    "business", "society", "societies", "capital", "housing", "affordable",
+    "information"
+
 }
 
 constituional_keywords = {
     "constitution", "constitutional", "elections",
     "parliament", "judiciary", "governance", "devolution",
-    "public service", "human rights", "bill of rights"
+    "public service", "human rights", "bill of rights", "president",
+
 }
 
 family_keywords = {
