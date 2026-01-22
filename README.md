@@ -77,7 +77,6 @@ flowchart TD
 
     %% Data flow arrows
     law_index --> main
-    crawler --> main
     parser --> fetch_service 
     judgement --> fetch_service
     fetch_service --> main
