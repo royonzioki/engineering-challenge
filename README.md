@@ -99,6 +99,7 @@ flowchart TD
 - ```python-docx``` - Python library for creating, reading, and updating Microsoft Word (docx) files.
 - ```reportlab``` - Used to generate clean, structured PDF judgments.
 - ```elasticsearch``` - Allows Python developers to connect with an Elasticsearch cluster and perform operations such as indexing, searching, updating, and deleting documents using Python code
+- ```__init__.py``` - Inititalizes directories as importable python packages.
 
 ### Getting Started 
 #### Installation
