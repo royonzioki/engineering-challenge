@@ -1,4 +1,3 @@
-# act_crawler/act_crawler.py
 import requests
 from bs4 import BeautifulSoup
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -7,9 +6,8 @@ from act_parsing.act_parser import AKNActParser
 from typing import List
 
 class ActCrawler:
-    """
-    Fetches each Act URL and parses its metadata.
-    """
+
+    # Fetches each Act URL and parses its metadata.
 
     def __init__(self, max_workers: int = 5):
         self.session = requests.Session()

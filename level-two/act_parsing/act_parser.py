@@ -51,7 +51,7 @@ class AKNActParser:
         pdf_link = f"{url}/source"
 
         try:
-            path = urlparse(url).path  # e.g., /akn/ke/act/2008/15/eng@2025-06-20
+            path = urlparse(url).path  # path looks like this /akn/ke/act/2008/15/eng@2025-06-20
             parts = path.strip("/").split("/")
             if len(parts) >= 5:
                 year_enacted = parts[3]  # the year after 'act'
