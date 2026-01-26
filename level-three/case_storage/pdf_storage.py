@@ -35,6 +35,10 @@ class PDFStore:
             f"Judges: {judgment.judges}",
             f"Date: {judgment.judgment_date}",
             f"Parties: {judgment.parties}",
+            f"Summary: {judgment.summary}",
+            f"legal_issues: {judgment.legal_issues}",
+            f"decision: {judgment.decision}",
+            f"legal_principles: {judgment.legal_principles}",
         ]
 
         for line in meta:

@@ -48,14 +48,14 @@ class CaseJudgmentParser:
 
         # Structuring
     def _extract_issues(self, paragraphs):
-        return [p for p in paragraphs if re.search(r"\bissue\b", p, re.I)][:5]
+        return [p for p in paragraphs if re.search(r"(issue|issues)", p, re.I)][:5]
 
     def _extract_principles(self, paragraphs):
-        return [p for p in paragraphs if re.search(r"held that|principle", p, re.I)][:5]
+        return [p for p in paragraphs if re.search(r"held that|principle|guidance", p, re.I)][:5]
 
     def _extract_decision(self, paragraphs):
         for p in paragraphs:
-            if re.search(r"(allowed|dismissed|granted|ordered|convicted)", p, re.I):
+            if re.search(r"(allowed|dismissed|granted|ordered|convicted|adopted|find|declare|finding|findings|awarded)", p, re.I):
                 return p
         return None
 

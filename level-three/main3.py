@@ -8,7 +8,7 @@ from case_crawler.case_index_crawler import CaseIndexCrawler
 
 async def main():
     index_crawler = CaseIndexCrawler()
-    case_urls = index_crawler.extract_case_urls()[:20]
+    case_urls = index_crawler.extract_case_urls()[:22]
 
     print(f"Discovered {len(case_urls)} case URLs")
     print("Sample URLs:", case_urls[:3])
@@ -16,7 +16,12 @@ async def main():
     fetcher = CaseFetcher(concurrency=5)
     parser = CaseJudgmentParser()
 
-    es = ElasticsearchStore()
+    es = ElasticsearchStore(
+        host="http://localhost:9200",
+        username="elastic",  # replace with your ES username
+        password="hG7*ujIvapFVc7ZDGEeV"
+    )
+
     pdf_store = PDFStore(base_dir="data/pdfs")
 
     html_pages = await fetcher.fetch_all(case_urls)
