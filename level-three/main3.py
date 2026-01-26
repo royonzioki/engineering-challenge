@@ -18,7 +18,7 @@ async def main():
 
     es = ElasticsearchStore(
         host="http://localhost:9200",
-        username="elastic",  # replace with your ES username
+        username="elastic",
         password="hG7*ujIvapFVc7ZDGEeV"
     )
 

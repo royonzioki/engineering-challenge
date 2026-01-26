@@ -312,10 +312,13 @@ flowchart TD
     - Fetches judgment HTML pages asynchronously.
     - Downloads official DOCX judgment files.
     - Extracts structured legal content.
-    - Generates clean PDFs in:
+    - Generates clean, locally stored PDFs in:
       ```bash
       level-three/data/pdfs
       ```
+    - Stores the structured elements in Elasticsearch under the link:
+   [**Kenya Law Judgements**](http://localhost:9200/kenyalaw_judgments/_search)
+
 3. For each Case/Judgment, the scraper produces:
 - A singular structured judgment.
 - A professionally formatted PDF.

@@ -12,7 +12,7 @@ class ElasticsearchStore:
             return None
 
         try:
-            # Example: "23 January 2026"
+            # Example: "23 January 2026" changed to YYYY-MM-dd
             dt = datetime.strptime(raw_date.strip(), "%d %B %Y")
             return dt.strftime("%Y-%m-%d")
         except ValueError:
@@ -43,7 +43,7 @@ class ElasticsearchStore:
                 index=self.index,
                 mappings={
                     "properties": {
-                        # ---- Structured fields (queryable) ----
+                        # ---- Structured fields ----
                         "case_id": {"type": "keyword"},
                         "title": {"type": "text"},
                         "court": {"type": "keyword"},
@@ -57,7 +57,7 @@ class ElasticsearchStore:
                         "text": {"type": "text"},
                         "source_url": {"type": "keyword"},
 
-                        # ---- Rendered document (PDF-like) ----
+                        # ---- Rendered text ----
                         "rendered_text": {"type": "text"},
                     }
                 },
@@ -65,7 +65,7 @@ class ElasticsearchStore:
             print(f"[Elasticsearch] Created index: {self.index}")
 
 
-    # ✅ EXACTLY like PDFStore
+    # Storing the elements in elasticsearch
     def store(self, judgment: Judgment):
         rendered = self._render_like_pdf(judgment)
 
@@ -83,16 +83,14 @@ class ElasticsearchStore:
             "text": judgment.text,
             "source_url": judgment.source_url,
 
-            # PDF-like view
+            # Rendered text
             "rendered_text": rendered,
         }
 
         self.es.index(index=self.index, document=doc)
         print(f"[Elasticsearch] Indexed case → {judgment.case_id}")
 
-    # ------------------------------
-    # Internal: mirrors PDF layout
-    # ------------------------------
+    # Mirror PDF format
     def _render_like_pdf(self, judgment: Judgment) -> str:
         lines = []
 
