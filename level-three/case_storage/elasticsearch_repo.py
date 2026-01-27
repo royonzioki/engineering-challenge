@@ -23,7 +23,7 @@ class ElasticsearchStore:
         host: str = "http://localhost:9200",
         index: str = "kenyalaw_judgments",
         username: str = "elastic",
-        password: str = "hG7*ujIvapFVc7ZDGEeV",
+        password: str = "fCniEGYkLnZwP3FCYNwF",
     ):
         self.index = index
 
@@ -54,7 +54,7 @@ class ElasticsearchStore:
                         "legal_issues": {"type": "text"},
                         "decision": {"type": "keyword"},
                         "legal_principles": {"type": "keyword"},
-                        "text": {"type": "text"},
+                        # "text": {"type": "text"},
                         "source_url": {"type": "keyword"},
 
                         # ---- Rendered text ----
@@ -80,7 +80,7 @@ class ElasticsearchStore:
             "legal_issues": judgment.legal_issues,
             "decision": judgment.decision,
             "legal_principles": judgment.legal_principles,
-            "text": judgment.text,
+            # "text": judgment.text,
             "source_url": judgment.source_url,
 
             # Rendered text
@@ -122,6 +122,6 @@ class ElasticsearchStore:
         lines.extend(judgment.legal_principles or [])
 
         # Judgment body
-        lines.append(judgment.text)
+        # lines.append(judgment.text)
 
         return "\n".join(lines)

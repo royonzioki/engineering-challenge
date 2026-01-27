@@ -13,9 +13,9 @@ def clean_text(text: str) -> str:
     return cleaned
 
 class AKNActParser:
-    """
-    Parses an Act HTML page into an Act object.
-    """
+
+
+    # Parsing an Act HTML page into an Act object.
 
     def parse(self, html: str, url: str):
         soup = BeautifulSoup(html, "html.parser")

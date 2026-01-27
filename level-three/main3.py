@@ -19,7 +19,7 @@ async def main():
     es = ElasticsearchStore(
         host="http://localhost:9200",
         username="elastic",
-        password="hG7*ujIvapFVc7ZDGEeV"
+        password="fCniEGYkLnZwP3FCYNwF"
     )
 
     pdf_store = PDFStore(base_dir="data/pdfs")

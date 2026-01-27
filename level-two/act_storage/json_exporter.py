@@ -8,9 +8,9 @@ from typing import List
 from act_model.act import Act
 
 class JSONExporter:
-    """
-    Exports Acts to a JSON file.
-    """
+
+    # Exporting Acts to a JSON file.
+
     def __init__(self, filename: str):
         self.filename = filename
 
