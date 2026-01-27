@@ -77,10 +77,12 @@ flowchart TD
 
     %% Data flow arrows
     law_index --> main
-    parser --> fetch_service 
+    judgment --> parser
+    parser --> fetch_service
     judgement --> fetch_service
-    fetch_service --> main
-    main --> csv_exporter
+    judgment --> csv_exporter
+    csv_exporter --> main
+    fetch_service --> main 
    ```
 
 ### Required Packages
